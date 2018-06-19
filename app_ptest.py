@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, session, redirect
+from flask import Flask, request, render_template, session, redirect, flash
 import os
 
 
@@ -8,6 +8,8 @@ app.secret_key = os.urandom(50)
 
 @app.route('/start', methods=['GET', 'POST'])
 def get_user_name():
+    if 'user' in session:
+        return redirect('/end_test')
     if request.method == 'GET':
         return render_template('user_name_form.html')
     else:
@@ -26,9 +28,10 @@ def do_the_test():
         pass
 
 
-@app.route('end_test')
+@app.route('/end_test')
 def drop_session():
     session.pop('user', None)
+    flash('What was your name again...?')
     return redirect('/start')
 
 
