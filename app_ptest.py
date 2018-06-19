@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, session
+from flask import Flask, request, render_template, session, redirect
 import os
 
 
@@ -17,10 +17,19 @@ def get_user_name():
             user=session['user']
         )
 
-    
+
 @app.route('/test', methods=['GET', 'POST'])
 def do_the_test():
-    pass
+    if request.method == 'GET':
+        pass
+    else:
+        pass
+
+
+@app.route('end_test')
+def drop_session():
+    session.pop('user', None)
+    return redirect('/start')
 
 
 if __name__ == '__main__':
