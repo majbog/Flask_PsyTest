@@ -1,7 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
-
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:coderslab@localhost:5432/pt_db'
 db = SQLAlchemy(app)
@@ -11,12 +10,11 @@ class House(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), unique=True, nullable=False)
     description = db.Column(db.String(200), unique=True, nullable=False)
+    rel_answers = db.relationship('Answer', backref='house', uselist=False)
 
     def __init__(self, name, description):
-        # self.id = id
         self.name = name
         self.description = description
-
 
 
 class Question(db.Model):
@@ -24,25 +22,22 @@ class Question(db.Model):
     text = db.Column(db.String(250), nullable=False)
     answers = db.relationship('Answer', backref='question', cascade='all, delete-orphan', lazy='dynamic')
 
-    def __init__(self, text, answers):
-        # self.id = id
+    def __init__(self, text):
         self.text = text
-        self.answers = answers
+        # self.answers = answers
 
 
 class Answer(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.String(250), nullable=False)
     quest = db.Column(db.Integer, db.ForeignKey('question.id'), nullable=False)
-    house = db.relationship('House', backref='house', uselist=False)
     house_id = db.Column(db.Integer, db.ForeignKey('house.id'))
 
+    def __init__(self, text, quest, house_id,):
 
-    def __init__(self, text: object, quest: object, house: object, house_id: object) -> object:
-        # self.id = id
         self.text = text
         self.quest = quest
-        self.house = house
+        # self.house = house
         self.house_id = house_id
 
 
@@ -59,10 +54,10 @@ if __name__ == '__main__':
     # db.session.add(slytherin)
     # db.session.commit()
     # print(gryffindor.id)
-    a1 = Question()
-    q1 = Question('some question', 1)
-    db.session.add(a1)
+    q1 = Question('sample question1')
+    a1 = Answer('sample answer1', 1, 1)
     db.session.add(q1)
+    db.session.add(a1)
     db.session.commit()
-
+    print(a1.id)
 
