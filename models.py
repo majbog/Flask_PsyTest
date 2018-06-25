@@ -50,11 +50,13 @@ if __name__ == '__main__':
     for key in houses:
         h = House(key, houses[key])
         db.session.add(h)
-    for q in questions:
+    for question in questions:
+        q = Question(question)
         db.session.add(q)
     for answer in answers:
         a = Answer(answer[0], answer[1], answer[2])
         db.session.add(a)
     db.session.commit()
+    print('database populated')
 
 
