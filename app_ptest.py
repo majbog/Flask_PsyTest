@@ -1,8 +1,15 @@
 from flask import Flask, request, render_template, session, redirect, flash
+from flask_sqlalchemy import SQLAlchemy
 import os
+
+from models import Question, House, Answer
 
 
 app = Flask(__name__)
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:coderslab@localhost:5432/pt_db'
+db = SQLAlchemy(app)
+
 app.secret_key = os.urandom(50)
 
 
@@ -23,7 +30,8 @@ def get_user_name():
 @app.route('/test', methods=['GET', 'POST'])
 def do_the_test():
     if request.method == 'GET':
-        pass
+        questions = Question.query.all()
+        return render_template('test_form.html', questions=questions)
     else:
         pass
 

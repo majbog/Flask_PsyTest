@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{%  block content %}
+
+
+    <form action="#" method="post">
+        {% for question in questions %}
+            <label>{{ question.text }}<br>
+                {% for answer in question.answers.all() %}
+                <input type="radio" name="answer-option" value="{{answer.house_id}}"> {{answer.text}}</input><br>
+                {% endfor %}
+            </label><br>
+        {% endfor %}
+        <button type="submit">Revelio!</button>
+    </form>
+
+
+
+{% endblock %}
+
+

@@ -54,15 +54,15 @@ answers = (
     ["Beater. I like having all that power.", 9, 2],
     ["I'll be in the crowd, making sure supporter morale is high!", 9, 4],
     ["Owl", 10, 3], ["Cat", 10, 1], ["Toad", 10, 4], ["Nothing. I can't be trusted to look after a pet!", 10, 2],
-    ["The Forbidden Forest", 10, 1], ["The library", 10, 3], ["The kitchens", 10, 4], ["The Room of Requirement", 10, 2],
-    ["Myself, surrounded by riches", 11, 2], ["Myself, surrounded by my loving family and friends.", 11, 4],
-    ["Myself, knowledgable above all.", 11, 3], ["Myself, experiencing a marvellous adventure.", 11, 1],
-    ["The Elder Wand", 12, 2], ["The Resurrection Stone", 12, 4], ["The Cloak of Invisibility", 12, 3],
-    ["I'd join the Ministry – I want to make a difference in the world.", 13, 2],
-    ["I think I'd travel for a while before committing to a career.", 13, 1],
-    ["I'd settle down and start a family as soon as possible!", 13, 4],
-    ["I'd continue to work hard in order to achieve as much success as possible.", 13, 3],
-    ["Gryffindor", 14, 1], ["Slytherin", 14, 2], ["Ravenclaw", 14, 3], ["Hufflepuff", 14, 4]
+    ["The Forbidden Forest", 11, 1], ["The library", 11, 3], ["The kitchens", 11, 4], ["The Room of Requirement", 11, 2],
+    ["Myself, surrounded by riches", 12, 2], ["Myself, surrounded by my loving family and friends.", 12, 4],
+    ["Myself, knowledgable above all.", 12, 3], ["Myself, experiencing a marvellous adventure.", 12, 1],
+    ["The Elder Wand", 13, 2], ["The Resurrection Stone", 13, 4], ["The Cloak of Invisibility", 13, 3],
+    ["I'd join the Ministry – I want to make a difference in the world.", 14, 2],
+    ["I think I'd travel for a while before committing to a career.", 14, 1],
+    ["I'd settle down and start a family as soon as possible!", 14, 4],
+    ["I'd continue to work hard in order to achieve as much success as possible.", 14, 3],
+    ["Gryffindor", 15, 1], ["Slytherin", 15, 2], ["Ravenclaw", 15, 3], ["Hufflepuff", 15, 4]
 )
 
 
