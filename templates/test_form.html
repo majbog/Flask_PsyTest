@@ -2,10 +2,15 @@
 
 {%  block content %}
 
+    <h3>Are you ready?</h3>
+    <button id="go-further">I'm so excited!</button>
 
-    <form action="#" method="post">
+    <h3>Ok then...</h3>
+
+
+    <form action="#" method="post" id="main-test">
         {% for question in questions %}
-            <label>{{ question.text }}<br>
+            <label class="question-content">{{ question.text }}<br>
                 {% for answer in question.answers.all() %}
                 <input type="radio" name="answer-option" value="{{answer.house_id}}"> {{answer.text}}</input><br>
                 {% endfor %}

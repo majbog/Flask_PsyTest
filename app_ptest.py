@@ -33,7 +33,8 @@ def do_the_test():
         questions = Question.query.all()
         return render_template('test_form.html', questions=questions)
     else:
-        pass
+        answers = []
+
 
 
 @app.route('/end_test')
