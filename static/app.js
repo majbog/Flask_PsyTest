@@ -13,7 +13,11 @@ $(function () {
 
 
     $('#go-further').click(function () {
-        $('#main-test:first-child').fadeIn(1300)
+        $(this).fadeOut(1300);
+        $('#intro-test').fadeOut(1300);
+        setTimeout(function () {
+            $('#prepare').fadeIn(1300)
+        }, 2000)
     })
 
 
