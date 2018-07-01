@@ -2,6 +2,11 @@ p{
     color: cyan;
 }
 
-#main-test{
 
+#main-test{
+    display: none;
+}
+
+#prepare{
+    display: none;
 }
