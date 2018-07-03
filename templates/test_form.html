@@ -14,11 +14,13 @@
         {% for question in questions %}
             <label class="question-content">{{ question.text }}<br>
                 {% for answer in question.answers.all() %}
-                <input type="radio" name="answer-option" value="{{answer.house_id}}"> {{answer.text}}</input><br>
+                <input type="radio" name="answer-option" value="{{answer.house_id}}" class="answer-radio">
+                    {{answer.text}}
+                </input><br>
                 {% endfor %}
-            </label><br>
+            </label>
         {% endfor %}
-        <button type="submit">Revelio!</button>
+            <button type="submit" id="revelio-button">Revelio!</button>
     </form>
 
 

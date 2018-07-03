@@ -3,10 +3,22 @@ p{
 }
 
 
-#main-test{
+.question-content{
     display: none;
 }
 
 #prepare{
     display: none;
+}
+
+#go-further{
+    display: none;
+}
+
+#intro-test{
+    display: none;
+}
+
+#revelio-button{
+    display:none;
 }
