@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template, session, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
 import os
+import requests
 
 from models import Question, House, Answer
 
@@ -51,6 +52,10 @@ def do_the_test():
                 highest_score.pop()
                 highest_score.append(result)
         selected_house = House.query.get(highest_score[0]['id_house'])
+        r = requests.get(
+            'https://www.potterapi.com/v1/houses/',
+            {'key':'$2a$10$wcQ9G2bqHnBlfi2horl3neCdBdZnKYjHerLWos0.UtfrxWx4yscTW'}
+        )
         return 'not finished  but House id is {}' .format(highest_score[0]['id_house'])
 
 
